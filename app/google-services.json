@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "111344016827",
+    "firebase_url": "https://bachelor-degree-project-cba2b.firebaseio.com",
+    "project_id": "bachelor-degree-project-cba2b",
+    "storage_bucket": "bachelor-degree-project-cba2b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111344016827:android:4716cd8c038fcee2bdb89e",
+        "android_client_info": {
+          "package_name": "com.example.shoppinglist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111344016827-f0e4ooi1vqsi362ncksncpi3fb2q7ikh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shoppinglist",
+            "certificate_hash": "7c64fe7fe91f3a7f902c7fd9d12a406296f9f550"
+          }
+        },
+        {
+          "client_id": "111344016827-i57ejjdh4obimqjfdanbdi808jr5uire.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeppr_yDhJsZHpm2QQiueM-IoQAH7A6Kc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111344016827-i57ejjdh4obimqjfdanbdi808jr5uire.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

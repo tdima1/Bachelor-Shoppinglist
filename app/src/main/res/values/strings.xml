@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Shoppinglist</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_inventory">Inventory</string>
+    <string name="btn_buildList">Make a List</string>
+    <string name="btn_resume">Resume Shopping</string>
+    <string name="testImage">Test Image</string>
+    <string name="listBuilderDoneButton">Image button for finish building list</string>
+
+    <string-array name="Meat">
+        <item>Chicken</item>
+        <item>Pork</item>
+        <item>Venison</item>
+        <item>Duck</item>
+        <item>Turkey</item>
+    </string-array>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:startDestination="@id/titleFragment">
+
+    <fragment
+            android:id="@+id/titleFragment"
+            android:name="com.example.shoppinglist.title.TitleFragment"
+            android:label="TitleFragment" >
+        <action
+                android:id="@+id/action_titleFragment_to_inventoryFragment"
+                app:destination="@id/inventoryFragment" />
+        <action
+                android:id="@+id/action_titleFragment_to_listBuilderFragment"
+                app:destination="@id/listBuilderFragment" />
+        <action
+                android:id="@+id/action_titleFragment_to_activeListFragment"
+                app:destination="@+id/activeListFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/inventoryFragment"
+            android:name="com.example.shoppinglist.inventory.InventoryFragment"
+            android:label="InventoryFragment" >
+        <action app:destination="@id/listBuilderFragment" />
+        <action
+                app:destination="@id/activeListFragment"
+                app:popUpTo="@+id/titleFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/listBuilderFragment"
+            android:name="com.example.shoppinglist.listBuilder.ListBuilderFragment"
+            android:label="ListBuilderFragment" >
+        <action
+                app:destination="@id/activeListFragment"
+                app:popUpTo="@+id/titleFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/activeListFragment"
+            android:name="com.example.shoppinglist.activeList.ActiveListFragment"
+            android:label="ActiveListFragment" >
+        <action app:destination="@id/inventoryFragment" />
+    </fragment>
+</navigation>
