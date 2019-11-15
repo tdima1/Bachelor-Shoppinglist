@@ -11,6 +11,7 @@ import android.widget.Toast
 
 import com.example.shoppinglist.R
 import com.example.shoppinglist.databinding.FragmentListBuilderBinding
+import com.google.firebase.database.FirebaseDatabase
 
 class ListBuilderFragment : Fragment() {
 
@@ -48,6 +49,10 @@ class ListBuilderFragment : Fragment() {
         binding.listBuilderDoneButton.setOnClickListener(){
             //listBuilderViewModel.addItemsToInventory()
         }
+
+        val database = FirebaseDatabase.getInstance()
+        val myRef = database.getReference("message")
+
         return binding.root
     }
 }
