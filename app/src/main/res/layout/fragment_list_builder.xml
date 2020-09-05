@@ -3,97 +3,78 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+                name="data_var_listBuilderViewModel"
+                type="com.example.shoppinglist.listBuilder.ListBuilderViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".listBuilder.ListBuilderFragment">
 
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/scrollViewCategories"
-                android:layout_width="match_parent"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="32dp"
-                app:layout_constraintBottom_toTopOf="@+id/selectedItems"
-                app:layout_constraintEnd_toEndOf="@+id/selectedItems"
-                app:layout_constraintHorizontal_bias="0.6"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerViewSelectedItems"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-            <!--<TextView
-                    android:id="@+id/test_text_view"
-                    android:layout_width="match_parent"
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewCategories"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="test linear layout"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-            <ListView
-                    android:id="@+id/list_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:entries="@array/Meat"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/test_text_view" />-->
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <HorizontalScrollView
-                android:id="@+id/selectedItems"
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewSelectedItems"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/listBuilderDoneButton"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/listBuilderDoneButton"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/scrollViewCategories">
-
-            <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:contentDescription="@string/testImage"
-                        android:src="@drawable/ic_apple_1"
-                        android:visibility="visible" />
-
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:contentDescription="@string/testImage"
-                        android:src="@drawable/ic_apple_1"
-                        android:visibility="visible" />
-            </LinearLayout>
-
-        </HorizontalScrollView>
+                app:layout_constraintTop_toBottomOf="@+id/refreshLayout" />
 
         <ImageButton
                 android:id="@+id/listBuilderDoneButton"
-                android:layout_width="53dp"
-                android:layout_height="52dp"
-                android:layout_marginTop="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="16dp"
                 android:contentDescription="@string/listBuilderDoneButton"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/selectedItems"
-                app:layout_constraintTop_toBottomOf="@+id/scrollViewCategories"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewSelectedItems"
                 app:srcCompat="@android:drawable/checkbox_on_background" />
+
+        <Button
+                android:id="@+id/customProductsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/custom_products_btn"
+                app:layout_constraintBottom_toBottomOf="@+id/listBuilderDoneButton"
+                app:layout_constraintEnd_toStartOf="@+id/listBuilderDoneButton"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/listBuilderDoneButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

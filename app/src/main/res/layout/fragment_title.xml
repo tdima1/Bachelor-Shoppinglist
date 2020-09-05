@@ -8,50 +8,79 @@
             android:layout_height="match_parent"
             tools:context=".title.TitleFragment">
 
-        <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_begin="80dp" />
-
         <Button
                 android:id="@+id/btn_make_list"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
                 android:text="@string/btn_buildList"
                 app:layout_constraintBottom_toTopOf="@+id/btn_inventory"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guideline" />
+                app:layout_constraintTop_toTopOf="parent" />
 
         <Button
                 android:id="@+id/btn_resumeShopping"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:text="@string/btn_resume"
-                app:layout_constraintBottom_toTopOf="@+id/guideline2"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_inventory" />
 
         <Button
                 android:id="@+id/btn_inventory"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:text="@string/btn_inventory"
                 app:layout_constraintBottom_toTopOf="@+id/btn_resumeShopping"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_make_list" />
 
-
-        <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline2"
+        <Button
+                android:id="@+id/signOutButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_begin="390dp" />
+                android:layout_marginBottom="16dp"
+                android:text="@string/sign_out"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/verifyEmailButton"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+                android:id="@+id/verifyEmailButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/verify_email"
+                app:layout_constraintBottom_toBottomOf="@+id/signOutButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/signOutButton"
+                app:layout_constraintTop_toTopOf="@+id/signOutButton" />
+
+        <Button
+                android:id="@+id/groupsButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/groups_button"
+                app:layout_constraintEnd_toEndOf="@+id/btn_resumeShopping"
+                app:layout_constraintStart_toStartOf="@+id/btn_resumeShopping"
+                app:layout_constraintTop_toBottomOf="@+id/btn_resumeShopping" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

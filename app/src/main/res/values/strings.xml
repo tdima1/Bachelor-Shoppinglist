@@ -8,6 +8,32 @@
     <string name="btn_resume">Resume Shopping</string>
     <string name="testImage">Test Image</string>
     <string name="listBuilderDoneButton">Image button for finish building list</string>
+    <string name="label_inventory_item_name">Name:</string>
+    <string name="label_inventory_item_quantity">Quantity:</string>
+    <string name="label_category_name">default</string>
+    <string name="active_list_check_box">In cart</string>
+    <string name="restock_button">Restock</string>
+    <string name="PH_category_name">PLACEHOLDER CATEGORY</string>
+    <string name="custom_products_btn">Custom Products</string>
+    <string name="custom_product_name_input">Specify name here</string>
+    <string name="create_custom_product_button">Create Custom Product</string>
+    <string name="custom_products_label">My Custom Products</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="create_account">Create Account</string>
+    <string name="verify_email">Verify Email</string>
+    <string name="hint_display_name">Display Name</string>
+    <string name="groups_button">My Group</string>
+    <string name="members_label">Active Members</string>
+    <string name="shared_list_button">Make a Shared List</string>
+    <string name="shared_inventory_button">Shared Inventory</string>
+    <string name="add_new_user_button">Add user to group</string>
+    <string name="shared_active_list_button">Check pending products</string>
+    <string name="group_name_field">Select your Inventory Name</string>
+    <string name="sort_category_button">Sort by Category</string>
+    <string name="sort_name_button">Sort by Name</string>
 
     <string-array name="Meat">
         <item>Chicken</item>

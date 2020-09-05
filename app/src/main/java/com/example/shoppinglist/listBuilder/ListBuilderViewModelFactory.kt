@@ -3,7 +3,6 @@ package com.example.shoppinglist.listBuilder
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-//import com.example.shoppinglist.database.ProductDatabaseDAO
 import java.lang.IllegalArgumentException
 
 class ListBuilderViewModelFactory(

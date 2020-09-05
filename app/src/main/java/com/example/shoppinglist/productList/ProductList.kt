@@ -2,13 +2,17 @@ package com.example.shoppinglist.productList
 
 class ProductList (){
 
-    private lateinit var items: MutableList<Product>
+    public lateinit var items: ArrayList<Product>
+
+    constructor(prodList: ArrayList<Product>) : this() {
+        addItems(prodList)
+    }
 
     fun addItem(element: Product){
         items.add(element)
     }
 
-    fun addItem(elements: MutableList<Product>){
+    fun addItems(elements: ArrayList<Product>){
         for ( it in elements){
             items.add(it)
         }

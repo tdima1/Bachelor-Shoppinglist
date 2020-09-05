@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:startDestination="@id/titleFragment">
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/navmesh"
+        app:startDestination="@id/fragmentEmailPassword">
 
     <fragment
             android:id="@+id/titleFragment"
             android:name="com.example.shoppinglist.title.TitleFragment"
-            android:label="TitleFragment" >
+            android:label="Home">
         <action
                 android:id="@+id/action_titleFragment_to_inventoryFragment"
                 app:destination="@id/inventoryFragment" />
@@ -16,28 +18,126 @@
         <action
                 android:id="@+id/action_titleFragment_to_activeListFragment"
                 app:destination="@+id/activeListFragment" />
+        <action
+                android:id="@+id/action_titleFragment_to_fragmentEmailPassword"
+                app:destination="@id/fragmentEmailPassword"
+                app:popUpTo="@+id/fragmentEmailPassword"
+                app:popUpToInclusive="true" />
+        <action
+                android:id="@+id/action_titleFragment_to_groupsFragment"
+                app:destination="@id/groupsFragment" />
     </fragment>
     <fragment
             android:id="@+id/inventoryFragment"
             android:name="com.example.shoppinglist.inventory.InventoryFragment"
-            android:label="InventoryFragment" >
-        <action app:destination="@id/listBuilderFragment" />
+            android:label="Inventory">
         <action
+                android:id="@+id/action_inventoryFragment_to_listBuilderFragment"
+                app:destination="@id/listBuilderFragment" />
+        <action
+                android:id="@+id/action_inventoryFragment_to_activeListFragment"
                 app:destination="@id/activeListFragment"
                 app:popUpTo="@+id/titleFragment" />
     </fragment>
     <fragment
             android:id="@+id/listBuilderFragment"
             android:name="com.example.shoppinglist.listBuilder.ListBuilderFragment"
-            android:label="ListBuilderFragment" >
+            android:label="Make a List">
         <action
+                android:id="@+id/action_listBuilderFragment_to_activeListFragment"
                 app:destination="@id/activeListFragment"
                 app:popUpTo="@+id/titleFragment" />
+        <action
+                android:id="@+id/action_listBuilderFragment_to_customProductsFragment"
+                app:destination="@id/customProductsFragment" />
     </fragment>
     <fragment
             android:id="@+id/activeListFragment"
             android:name="com.example.shoppinglist.activeList.ActiveListFragment"
-            android:label="ActiveListFragment" >
-        <action app:destination="@id/inventoryFragment" />
+            android:label="My Lists">
+        <action
+                android:id="@+id/action_activeListFragment_to_inventoryFragment"
+                app:destination="@id/inventoryFragment" />
+        <action
+                android:id="@+id/action_activeListFragment_to_titleFragment"
+                app:destination="@id/titleFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/customProductsFragment"
+            android:name="com.example.shoppinglist.customProducts.CustomProductsFragment"
+            android:label="Custom Products">
+        <action
+                android:id="@+id/action_customProductsFragment_to_listBuilderFragment"
+                app:destination="@id/listBuilderFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/fragmentEmailPassword"
+            android:name="com.example.shoppinglist.firebaseAuth.FragmentEmailPassword"
+            android:label="Log In"
+            tools:layout="@layout/fragment_email_password_fragment">
+        <action
+                android:id="@+id/action_fragmentEmailPassword_to_titleFragment"
+                app:destination="@id/titleFragment"
+                app:popUpTo="@+id/titleFragment"
+                app:popUpToInclusive="true" />
+        <action
+                android:id="@+id/action_fragmentEmailPassword_to_createAccountFragment"
+                app:destination="@id/createAccountFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/groupsFragment"
+            android:name="com.example.shoppinglist.groups.GroupsFragment"
+            android:label="My Group">
+        <action
+                android:id="@+id/action_groupsFragment_to_sharedListBuilderFragment"
+                app:destination="@id/sharedListBuilderFragment" />
+        <action
+                android:id="@+id/action_groupsFragment_to_sharedActiveListFragment"
+                app:destination="@id/sharedActiveListFragment" />
+        <action
+                android:id="@+id/action_groupsFragment_to_sharedInventoryFragment"
+                app:destination="@id/sharedInventoryFragment"
+                app:popEnterAnim="@anim/nav_default_enter_anim" />
+    </fragment>
+    <fragment
+            android:id="@+id/createAccountFragment"
+            android:name="com.example.shoppinglist.accountManagement.CreateAccountFragment"
+            android:label="Account Creation">
+        <action
+                android:id="@+id/action_createAccountFragment_to_fragmentEmailPassword"
+                app:destination="@id/fragmentEmailPassword" />
+    </fragment>
+    <fragment
+            android:id="@+id/sharedListBuilderFragment"
+            android:name="com.example.shoppinglist.listBuilder.SharedListBuilderFragment"
+            android:label="List Builder"
+            tools:layout="@layout/fragment_list_builder">
+        <action
+                android:id="@+id/action_sharedListBuilderFragment_to_groupsFragment"
+                app:destination="@id/groupsFragment" />
+        <action
+                android:id="@+id/action_sharedListBuilderFragment_to_sharedCustomProductsFragment"
+                app:destination="@id/sharedCustomProductsFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/sharedCustomProductsFragment"
+            android:name="com.example.shoppinglist.customProducts.SharedCustomProductsFragment"
+            android:label="fragment_shared_custom_products"
+            tools:layout="@layout/fragment_shared_custom_products" />
+    <fragment
+            android:id="@+id/sharedActiveListFragment"
+            android:name="com.example.shoppinglist.activeList.SharedActiveListFragment"
+            android:label="Group Active List" >
+        <action
+                android:id="@+id/action_sharedActiveListFragment_to_groupsFragment"
+                app:destination="@id/groupsFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/sharedInventoryFragment"
+            android:name="com.example.shoppinglist.inventory.SharedInventoryFragment"
+            android:label="Group Inventory" >
+        <action
+                android:id="@+id/action_sharedInventoryFragment_to_sharedActiveListFragment"
+                app:destination="@id/sharedActiveListFragment" />
     </fragment>
 </navigation>
